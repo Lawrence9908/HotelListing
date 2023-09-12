@@ -1,0 +1,14 @@
+2023-09-12 18:13:33.656 +02:00 [ERR] Failed executing DbCommand (0ms) [Parameters=[], CommandType='"Text"', CommandTimeout='30']
+CREATE TABLE [AspNetRoles] (
+    [Id] nvarchar(450) NOT NULL,
+    [Name] nvarchar(256) NULL,
+    [NormalizedName] nvarchar(256) NULL,
+    [ConcurrencyStamp] nvarchar(max) NULL,
+    CONSTRAINT [PK_AspNetRoles] PRIMARY KEY ([Id])
+);
+2023-09-12 18:14:57.486 +02:00 [INF] Now listening on: https://localhost:7288
+2023-09-12 18:14:57.603 +02:00 [INF] Now listening on: http://localhost:5086
+2023-09-12 18:14:57.614 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-12 18:14:57.617 +02:00 [INF] Hosting environment: Development
+2023-09-12 18:14:57.619 +02:00 [INF] Content root path: C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\
+2023-09-12 18:15:14.270 +02:00 [INF] HTTP GET /api/Countries responded 200 in 5462.8798 ms
