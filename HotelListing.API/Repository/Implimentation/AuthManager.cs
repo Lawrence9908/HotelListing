@@ -17,6 +17,33 @@ namespace HotelListing.API.Repository.Implimentation
             _mapper = mapper;
         }
 
+        public async Task<bool> Login(LoginRequest loginRequest)
+        {
+
+            bool isValidUser =false;
+
+            try
+            {
+                var user = await _userManager.FindByEmailAsync(loginRequest.Email);
+                if (user is null)
+                {
+                    return default;
+                }
+                isValidUser = await _userManager.CheckPasswordAsync(user, loginRequest.Password);
+                if (!isValidUser)
+                {
+                    return default;
+                }
+                
+            }
+            catch (Exception)
+            {
+                
+            }
+            return isValidUser;
+        
+        }
+
         public async Task<IEnumerable<IdentityError>> Register(RegisterRequest registerRequest)
         {
             var user = _mapper.Map<ApplicationUser>(registerRequest);
@@ -24,6 +51,12 @@ namespace HotelListing.API.Repository.Implimentation
 
             var result  = await _userManager.CreateAsync(user, registerRequest.Password);
 
+
+            // IF EVERYTHING PASSED ADD THE ROLES
+            if(result.Succeeded)
+            {
+                await _userManager.AddToRoleAsync(user, "User");
+            }
             return result.Errors;
  
         }
