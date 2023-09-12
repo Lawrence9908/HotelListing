@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "bVNgI+KxZOC2SzioQ/jIId87nwoxhGF+JpIIRmPVZB8OoydoEryvX0CUOPE+1OUwaqRxGqV9PZO+tyKbheU1Lw==",
+  "dgSpecHash": "aKZZtXk+N4YJROqfQwchBXYJ6xRyAJi/RPc24qFWtfuqiIQTM3JKGZ8FItVI6L5EB4TRjv/DhE5XEhOMR2/eLw==",
   "success": true,
   "projectFilePath": "C:\\Users\\mugwe\\Music\\Personal\\HotelListing\\HotelListing.API\\HotelListing.API.csproj",
   "expectedPackageFiles": [
@@ -61,6 +61,7 @@
     "C:\\Users\\mugwe\\.nuget\\packages\\messagepack\\2.1.152\\messagepack.2.1.152.nupkg.sha512",
     "C:\\Users\\mugwe\\.nuget\\packages\\messagepack.annotations\\2.1.152\\messagepack.annotations.2.1.152.nupkg.sha512",
     "C:\\Users\\mugwe\\.nuget\\packages\\messagepackanalyzer\\2.1.152\\messagepackanalyzer.2.1.152.nupkg.sha512",
+    "C:\\Users\\mugwe\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\6.0.22\\microsoft.aspnetcore.authentication.jwtbearer.6.0.22.nupkg.sha512",
     "C:\\Users\\mugwe\\.nuget\\packages\\microsoft.aspnetcore.cryptography.internal\\6.0.22\\microsoft.aspnetcore.cryptography.internal.6.0.22.nupkg.sha512",
     "C:\\Users\\mugwe\\.nuget\\packages\\microsoft.aspnetcore.cryptography.keyderivation\\6.0.22\\microsoft.aspnetcore.cryptography.keyderivation.6.0.22.nupkg.sha512",
     "C:\\Users\\mugwe\\.nuget\\packages\\microsoft.aspnetcore.identity.entityframeworkcore\\6.0.22\\microsoft.aspnetcore.identity.entityframeworkcore.6.0.22.nupkg.sha512",

@@ -6,6 +6,6 @@ namespace HotelListing.API.Repository.IRepostitory
     public interface IAuthManager
     {
         Task<IEnumerable<IdentityError>> Register(RegisterRequest registerRequest);
-        Task<bool> Login(LoginRequest loginRequest);
+        Task<AuthResponseDto> Login(LoginRequest loginRequest);
     }
 }

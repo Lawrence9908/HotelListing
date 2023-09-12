@@ -313,3 +313,4 @@ C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\ref
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\HotelListing.API.pdb
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\HotelListing.API.genruntimeconfig.cache
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\ref\HotelListing.API.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll

@@ -43,13 +43,13 @@ namespace HotelListing.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
-            var isValidUser = await _authManager.Login(loginRequest);
-            if (isValidUser)
+            var authReponse= await _authManager.Login(loginRequest);
+            if (authReponse == null)
             {
                 return Unauthorized();
             }
 
-            return Ok();
+            return Ok(authReponse);
         }
     }
 }
