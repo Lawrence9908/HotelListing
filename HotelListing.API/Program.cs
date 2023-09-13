@@ -39,7 +39,9 @@ builder.Services.AddDbContext<HotelListingDbContext>(option =>
 
 builder.Services.AddIdentityCore<ApplicationUser>()
       .AddRoles<IdentityRole>()
-     .AddEntityFrameworkStores<HotelListingDbContext>();
+      .AddTokenProvider<DataProtectorTokenProvider<ApplicationUser>>("HotelListingApi")
+     .AddEntityFrameworkStores<HotelListingDbContext>()
+     .AddDefaultTokenProviders();
 
 //Adding AutoMapper
 builder.Services.AddAutoMapper(typeof(MapperConfig));
@@ -81,6 +83,7 @@ if (app.Environment.IsDevelopment())
 app.UseSerilogRequestLogging(); //Logs the requests and reponse time
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
+app.UseAuthentication();
 app.UseAuthorization();
 
 app.MapControllers();
