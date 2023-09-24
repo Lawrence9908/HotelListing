@@ -1,4 +1,6 @@
-﻿namespace HotelListing.API.Repository.IRepostitory
+﻿using HotelListing.API.Models;
+
+namespace HotelListing.API.Repository.IRepostitory
 {
     public interface IGenericRepository<T> where T : class
     {
@@ -6,7 +8,9 @@
         Task<List<T>> GetAllAsync();
         Task UpdateAsync(T entity);
         Task DeleteAsync(int id);
-        Task<T> GetAsync(int id);
+        Task<T> GetAsync(int? id);
         Task<bool> Exists(int id);
+
+        Task<PagedResult<TResult>> GetAllAsync<TResult>(QueryParameters queryParameters);
     }
 }

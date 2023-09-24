@@ -1,4 +1,5 @@
-﻿using HotelListing.API.Models.Account;
+﻿using HotelListing.API.Entity;
+using HotelListing.API.Models.Account;
 using HotelListing.API.Repository.IRepostitory;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
@@ -7,13 +8,16 @@ namespace HotelListing.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class AccountController : ControllerBase
     {
         private readonly IAuthManager _authManager;
+         private readonly ILogger  _logger;
 
-        public AccountController(IAuthManager authManager)
+        public AccountController(IAuthManager authManager, ILogger<AccountController> logger)
         {
             _authManager = authManager;
+            _logger = logger;
         }
 
         [HttpPost]
@@ -23,17 +27,27 @@ namespace HotelListing.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Register(RegisterRequest registerRequest)
         {
-            var errors = await _authManager.Register(registerRequest);
-            if(errors.Any()) { 
-                foreach(var error in errors)
+            _logger.LogInformation("User Register in start");
+            _logger.LogError($"Register request: {registerRequest.Email}");
+            try
+            {
+                var errors = await _authManager.Register(registerRequest);
+                if (errors.Any())
                 {
-                    ModelState.AddModelError(error.Code, error.Description);
-                };
+                    foreach (var error in errors)
+                    {
+                        ModelState.AddModelError(error.Code, error.Description);
+                    };
 
-                return BadRequest(ModelState);
+                    return BadRequest(ModelState);
+                }
+
+                return Ok();
+            }catch(Exception ex)
+            {
+                _logger.LogError(ex,$"Something Went wrong in the: {nameof(Register)} - User Registration attempt for {registerRequest.Email}");
+                return Problem($"Something went wrong in the  {nameof(Register)}. Please contact support.", statusCode: 500);
             }
-
-            return Ok();
         }
 
         [HttpPost]
@@ -43,13 +57,22 @@ namespace HotelListing.API.Controllers
         [ProducesResponseType(StatusCodes.Status200OK)]
         public async Task<IActionResult> Login([FromBody] LoginRequest loginRequest)
         {
-            var authReponse= await _authManager.Login(loginRequest);
-            if (authReponse == null)
+            _logger.LogInformation($"Login Attempt for {loginRequest.Email}");
+            try
             {
-                return Unauthorized();
-            }
+                var authReponse = await _authManager.Login(loginRequest);
+                if (authReponse == null)
+                {
+                    return Unauthorized();
+                }
 
-            return Ok(authReponse);
+                return Ok(authReponse);
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex,$"Something Went wrong in the  {nameof(Login)}");
+                return Problem($"Something Went Wrong in the  {nameof(Login)}", statusCode: 500);
+            }
         }
 
 

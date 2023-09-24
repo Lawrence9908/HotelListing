@@ -10,11 +10,15 @@ using HotelListing.API.Entity;
 using HotelListing.API.Repository.IRepostitory;
 using AutoMapper;
 using HotelListing.API.Models.Hotel;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using HotelListing.API.Models;
+using Microsoft.AspNetCore.OData.Query;
 
 namespace HotelListing.API.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
+    [ApiVersion("1.0")]
     public class HotelsController : ControllerBase
     {
         private readonly IHotelsRepository _hotelsRepository;
@@ -31,6 +35,15 @@ namespace HotelListing.API.Controllers
         public async Task<ActionResult<IEnumerable<HotelDto>>> GetHotels()
         {
             return Ok(_mapper.Map<List<HotelDto>>(await _hotelsRepository.GetAllAsync()));
+        }
+        // GET: api/Hotels
+        [HttpGet("GetAll")]
+        [EnableQuery]
+        public async Task<ActionResult<PagedResult<HotelDto>>> GetHotels([FromQuery] QueryParameters queryParameters)
+        {
+            //return Ok(_mapper.Map<List<HotelDto>>(await _hotelsRepository.GetAllAsync()));
+            var pagedHotelsResult = await _hotelsRepository.GetAllAsync<HotelDto>(queryParameters);
+            return Ok(pagedHotelsResult);
         }
 
         // GET: api/Hotels/5

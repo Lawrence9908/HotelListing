@@ -38,14 +38,14 @@ namespace HotelListing.API.Repository.Implimentation
         public async Task<AuthResponseDto> Login(LoginRequest loginRequest)
         {
 
-            bool isValidUser =false;
+           // bool isValidUser =false;
 
-            
-           _user = await _userManager.FindByEmailAsync(loginRequest.Email);
-           isValidUser = await _userManager.CheckPasswordAsync(_user, loginRequest.Password);
-           if (_user is null || isValidUser ==false)
+            _user = await _userManager.FindByEmailAsync(loginRequest.Email);
+            //var user = await _userManager.FindByEmailAsync(loginRequest.Email);
+            bool isValidUser = await _userManager.CheckPasswordAsync(_user, loginRequest.Password);
+           if (_user == null || isValidUser ==false)
            {
-               return default;
+               return null;
            }
             
            var token = await GenerateToken();
@@ -89,13 +89,14 @@ namespace HotelListing.API.Repository.Implimentation
                 return null;
             }
             var token = await GenerateToken();
+            await _userManager.UpdateSecurityStampAsync(_user);
             return new AuthResponseDto
             {
                 Token = token,
                 UserId = _user.Id,
                 RefreshToken = await CreateRefreshToken()
             };
-            await _userManager.UpdateSecurityStampAsync(_user);
+            
         }
 
         private async Task<string> GenerateToken()

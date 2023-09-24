@@ -19,6 +19,7 @@ C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Azu
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Humanizer.dll
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\MessagePack.dll
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\MessagePack.Annotations.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
@@ -313,4 +314,10 @@ C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\ref
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\HotelListing.API.pdb
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\HotelListing.API.genruntimeconfig.cache
 C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\obj\Debug\net6.0\ref\HotelListing.API.dll
-C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Authentication.JwtBearer.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.Mvc.Versioning.ApiExplorer.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.AspNetCore.OData.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.OData.Core.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.OData.Edm.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.OData.ModelBuilder.dll
+C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\bin\Debug\net6.0\Microsoft.Spatial.dll

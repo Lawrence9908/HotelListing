@@ -1,0 +1,5 @@
+2023-09-21 08:43:59.749 +02:00 [INF] Now listening on: https://localhost:7288
+2023-09-21 08:44:00.023 +02:00 [INF] Now listening on: http://localhost:5086
+2023-09-21 08:44:00.030 +02:00 [INF] Application started. Press Ctrl+C to shut down.
+2023-09-21 08:44:00.033 +02:00 [INF] Hosting environment: Development
+2023-09-21 08:44:00.035 +02:00 [INF] Content root path: C:\Users\mugwe\Music\Personal\HotelListing\HotelListing.API\
